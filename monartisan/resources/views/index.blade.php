@@ -49,61 +49,73 @@
             <tr>
               <td style='border: none;'>
                 <libel for="assurance">Assurance</libel>
-                <input type="text" name="assurance" id="assurance" class="form-control" required>
+                <select name="assurance" id="assurance" class="form-control" placeholder="Assurance" required>
+                  <option value="Assurance1">Assurance1</option>
+                  <option value="Assurance2">Assurance2</option>
+                  <option value="Assurance3">Assurance3</option>
+                  <option value="Assurance4">Assurance4</option>
+                  <option value="Assurance5">Assurance5</option>
+                </select>
               </td>
               <td style='border: none;'>
                 <libel for="numero_police">Numéro police</libel>
-                <input type="text" name="numero_police" id="police" class="form-control" required>
+                <input type="text" name="numero_police" id="police" class="form-control" placeholder="33 *******" required>
               </td>
             </tr>
             <tr>
               <td colspan="2" style='border: none;'>
                 <libel for="nom_complet">Nom et prénom</libel>
-                <input type="text" name="nom_complet" class="form-control" required>
+                <input type="text" name="nom_complet" class="form-control" placeholder="John Doe" required>
               </td>
             </tr>
             <tr>
               <td colspan="2" style='border: none;'>
                 <libel for="email">Email</libel>
-                <input type="text" name="email" class="form-control" required>
+                <input type="text" name="email" class="form-control" placeholder="exemple@gmail.com" required>
               </td>
             </tr>
             <tr>
               <td style='border: none;'>
                 <libel for="contact1">Contact 1</libel>
-                <input type="text" name="contact1" id="contact1" class="form-control" required>
+                <input type="text" name="contact1" id="contact1" class="form-control" placeholder="76 *******" required>
               </td>
               <td style='border: none;'>
                 <libel for="contact2">Contact 2</libel>
-                <input type="text" name="contact2" id="contact2" class="form-control" required>
+                <input type="text" name="contact2" id="contact2" class="form-control" placeholder="77 *******" required>
               </td>
             </tr>
             <tr>
               <td style='border: none;'>
                 <libel for="lieu">Lieu</libel>
-                <input type="text" name="lieu" id="lieu" class="form-control" required>
+                <input type="text" name="lieu" id="lieu" class="form-control" placeholder="Lieu" required>
               </td>
               <td style='border: none;'>
-                <libel for="nature">Nature</libel>
-                <input type="text" name="nature" id="nature" class="form-control" required>
+                <libel for="nature">Nature de l' intervation</libel>
+                <select name="nature" id="nature" class="form-control" placeholder="Nature" required>
+                  <option value="Nature1">Nature1</option>
+                  <option value="Nature2">Nature2</option>
+                  <option value="Nature3">Nature3</option>
+                  <option value="Nature4">Nature4</option>
+                  <option value="Nature5">Nature5</option>
+                </select>
               </td>
             </tr>
             <tr>
               <td colspan="2" style='border: none;'>
                 <libel for="date">Date</libel>
-                <input type="text" name="date" id="date" class="form-control" required>
+                <input type="date" name="date" id="date" class="form-control" required>
               </td>
             </tr>
             <tr>
               <td colspan="2" style='border: none;'>
                 <libel for="detail">Détails</libel>
-                <textarea name="details" id="detail" class="form-control" placeholder="pourquoi 1_2"></textarea>
+                <textarea name="details" rows="4" id="detail" class="form-control" placeholder="détails"></textarea>
               </td>
             </tr>
           </tbody>
         </table>
         <div class="">
-          <a type="submit" class=" btn btn-primary sm mx-2">Déclarer</a>
+          <button type="submit" class=" btn btn-primary sm mx-2">Déclarer</button>
         </div>
       </form>
     </div>
@@ -116,6 +128,25 @@
   </div>
   <div class="my-3 p-3 mx-auto" id="contact">
     <div class="table-responsive">
+    @if(session()->has("successContact"))
+      <div class="alert alert-success">
+        <h4>{{ session()->get('successContact') }}</h4>
+      </div>
+      @endif
+      @if(session()->has("successDelete"))
+      <div class="alert alert-success">
+        <h4>{{ session()->get('successDelete') }}</h4>
+      </div>
+      @endif
+      @if ($errors->any())
+      <div class="alert alert-danger">
+        <ul>
+          @foreach($errors->all() as $error)
+          <li>{{ $error }}</li>
+          @endforeach
+        </ul>
+      </div>
+      @endif
       <form action=" {{ route('contact.ajouter') }} " method="post">
         @csrf
         <table class="table  mb-0 ">
@@ -133,7 +164,7 @@
             <tr>
               <td colspan="2" style='border: none;'>
                 <libel for="message">Message</libel>
-                <textarea name="message" rows="4" id="message" class="form-control" required>Message</textarea>
+                <textarea name="message" rows="4" id="message" class="form-control" placeholder="Message" required></textarea>
               </td>
             </tr>
           </tbody>
