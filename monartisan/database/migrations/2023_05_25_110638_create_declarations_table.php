@@ -16,11 +16,11 @@ return new class extends Migration
             $table->string('assurance');
             $table->string('numero_police');
             $table->string('nom_complet');
-            $table->string('email')->unique();
+            $table->string('email')->unique()->nullable();
             $table->string('contact1');
-            $table->string('contact2');
+            $table->string('contact2')->nullable();
             $table->string('lieu');
-            $table->string('date');
+            $table->string('date')->nullable();
             $table->string('details');
             $table->timestamps();
         });

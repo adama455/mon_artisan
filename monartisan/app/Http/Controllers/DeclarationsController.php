@@ -40,11 +40,8 @@ class DeclarationsController extends Controller
             "assurance" =>"required",
             "numero_police" =>"required",
             "nom_complet" =>"required",
-            "email" =>"required",
             "contact1" =>"required",
-            "contact2" =>"required",
             "lieu" =>"required",
-            "date" =>"required",
             "nature" =>"required",
             "details" =>"required",
         ]);
@@ -93,11 +90,8 @@ class DeclarationsController extends Controller
             "assurance" =>"required",
             "numero_police" =>"required",
             "nom_complet" =>"required",
-            "email" =>"required",
             "contact1" =>"required",
-            "contact2" =>"required",
             "lieu" =>"required",
-            "date" =>"required",
             "nature" =>"required",
             "details" =>"required",
         ]);

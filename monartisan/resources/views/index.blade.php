@@ -43,12 +43,14 @@
         @csrf
         <table class="table  mb-0 ">
           <thead>
-            <h3 class="border-bottom pb-2 mb-4">Déclarer un sinistre</h3>
+            <h3 class="border-bottom pb-2 mb-4"> Formulaire de déclaration de sinistre</h3>
           </thead>
           <tbody>
             <tr>
               <td style='border: none;'>
-                <libel for="assurance">Assurance</libel>
+                <libel for="assurance">Assurance
+                  <span class="text-danger">*</span>
+                </libel>
                 <select name="assurance" id="assurance" class="form-control" placeholder="Assurance" required>
                   <option value="Assurance1">Assurance1</option>
                   <option value="Assurance2">Assurance2</option>
@@ -58,39 +60,49 @@
                 </select>
               </td>
               <td style='border: none;'>
-                <libel for="numero_police">Numéro police</libel>
+                <libel for="numero_police">Numéro police
+                  <span class="text-danger">*</span>
+                </libel>
                 <input type="text" name="numero_police" id="police" class="form-control" placeholder="33 *******" required>
               </td>
             </tr>
             <tr>
               <td colspan="2" style='border: none;'>
-                <libel for="nom_complet">Nom et prénom</libel>
+                <libel for="nom_complet">Nom et prénom
+                  <span class="text-danger">*</span>
+                </libel>
                 <input type="text" name="nom_complet" class="form-control" placeholder="John Doe" required>
               </td>
             </tr>
             <tr>
               <td colspan="2" style='border: none;'>
                 <libel for="email">Email</libel>
-                <input type="text" name="email" class="form-control" placeholder="exemple@gmail.com" required>
+                <input type="text" name="email" class="form-control" placeholder="exemple@gmail.com">
               </td>
             </tr>
             <tr>
               <td style='border: none;'>
-                <libel for="contact1">Contact 1</libel>
+                <libel for="contact1">Contact 1
+                  <span class="text-danger">*</span>
+                </libel>
                 <input type="text" name="contact1" id="contact1" class="form-control" placeholder="76 *******" required>
               </td>
               <td style='border: none;'>
                 <libel for="contact2">Contact 2</libel>
-                <input type="text" name="contact2" id="contact2" class="form-control" placeholder="77 *******" required>
+                <input type="text" name="contact2" id="contact2" class="form-control" placeholder="77 *******" >
               </td>
             </tr>
             <tr>
               <td style='border: none;'>
-                <libel for="lieu">Lieu</libel>
+                <libel for="lieu">Lieu
+                  <span class="text-danger">*</span>
+                </libel>
                 <input type="text" name="lieu" id="lieu" class="form-control" placeholder="Lieu" required>
               </td>
               <td style='border: none;'>
-                <libel for="nature">Nature de l' intervation</libel>
+                <libel for="nature">Nature de l' intervation
+                  <span class="text-danger">*</span>
+                </libel>
                 <select name="nature" id="nature" class="form-control" placeholder="Nature" required>
                   <option value="Nature1">Nature1</option>
                   <option value="Nature2">Nature2</option>
@@ -103,12 +115,14 @@
             <tr>
               <td colspan="2" style='border: none;'>
                 <libel for="date">Date</libel>
-                <input type="date" name="date" id="date" class="form-control" required>
+                <input type="date" name="date" id="date" class="form-control" >
               </td>
             </tr>
             <tr>
               <td colspan="2" style='border: none;'>
-                <libel for="detail">Détails</libel>
+                <libel for="detail">Détails
+                  <span class="text-danger">*</span>
+                </libel>
                 <textarea name="details" rows="4" id="detail" class="form-control" placeholder="détails"></textarea>
               </td>
             </tr>
@@ -153,17 +167,23 @@
           <tbody>
             <tr>
               <td style='border: none;'>
-                <libel for="telephone">Téléphone</libel>
+                <libel for="telephone">Téléphone
+                  <span class="text-danger">*</span>
+                </libel>
                 <input type="telephone" name="telephone" id="lieu" class="form-control" placeholder="telephone" required>
               </td>
               <td style='border: none;'>
-                <libel for="email">Email</libel>
+                <libel for="email">Email
+                  <span class="text-danger">*</span>
+                </libel>
                 <input type="text" name="email" id="email" class="form-control" placeholder="exemple@gmail.com" required>
               </td>
             </tr>
             <tr>
               <td colspan="2" style='border: none;'>
-                <libel for="message">Message</libel>
+                <libel for="message">Message
+                  <span class="text-danger">*</span>
+                </libel>
                 <textarea name="message" rows="4" id="message" class="form-control" placeholder="Message" required></textarea>
               </td>
             </tr>
