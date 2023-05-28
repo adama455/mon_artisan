@@ -1,0 +1,20 @@
+.div-carousel{
+    height: 40vh;
+    background: url('../images/monartisan-banner-compressed.jpeg') top no-repeat;
+    background-size: cover ;
+
+}
+.div-banner2{
+    height: 40vh;
+    background: url('../images/background-bznner.jpeg') top no-repeat;
+    background-size: cover ;
+}
+.bt:hover{
+    background: black;
+}
+.btt{
+    background: #ea580c;
+}
+.btt:hover{
+    background: black;
+}
