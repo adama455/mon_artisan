@@ -18,3 +18,24 @@
 .btt:hover{
     background: black;
 }
+
+.btn-back-to-top {
+    display: none;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #000;
+    color: #fff;
+    text-align: center;
+    line-height: 40px;
+    font-size: 18px;
+    z-index: 9999;
+  }
+  
+  .btn-back-to-top:hover {
+    background-color: #333;
+  }
+  

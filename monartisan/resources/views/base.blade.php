@@ -54,7 +54,7 @@
       </div>
     </div>
   </header> -->
-  <nav class="d-flex flex-row justify-content-between align-items-center px-5">
+  <nav class="fixed-top bg-body-tertiary d-flex flex-row justify-content-between align-items-center px-5 ">
     <p>
       <a href="{{ route('acceuil') }}" title="Home">
         <img src="{{ asset('images/logo-monartisan.png')  }}" width="150" alt="" class="">
@@ -83,6 +83,9 @@
     @yield('content')
   </div>
 
+  <a href="#" id="back-to-top" class="btn-back-to-top">
+    <i class="fas fa-arrow-up"></i> Retour en haut
+  </a>
   <footer class="py-3 my-4">
     <hr>
     <div class="p-2 w-full pt-8 mt-8 border-t border-gray text-center">
@@ -107,6 +110,7 @@
         </svg>
         </a>
       </span>
+      
     </div>
   </footer>
 
@@ -125,7 +129,26 @@
     $(document).ready(function () {
       $('#example1').DataTable();
     });
-    
+  </script>
+
+  <script>
+      $(document).ready(function() {
+      // Afficher ou masquer le bouton "Retour en haut" en fonction du défilement
+      $(window).scroll(function() {
+        if ($(this).scrollTop() > 100) {
+          $('#back-to-top').fadeIn();
+        } else {
+          $('#back-to-top').fadeOut();
+        }
+      });
+
+      // Animer le défilement vers le haut lorsqu'on clique sur le bouton
+      $('#back-to-top').click(function() {
+        $('html, body').animate({ scrollTop: 0 }, 800);
+        return false;
+      });
+    });
+
   </script>
 
 </body>
